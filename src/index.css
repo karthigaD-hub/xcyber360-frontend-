@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 93%;
+    --secondary-foreground: 220 30% 15%;
+
+    --muted: 220 15% 93%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 185 80% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 210 100% 45%;
+
+    --radius: 0.625rem;
+
+    --success: 142 72% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    --info: 210 100% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --cyber-glow: 185 80% 40%;
+    --cyber-grid: 220 15% 90%;
+
+    --sidebar-background: 220 25% 96%;
+    --sidebar-foreground: 220 20% 25%;
+    --sidebar-primary: 210 100% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 92%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 15% 88%;
+    --sidebar-ring: 210 100% 45%;
+  }
+
+  /* Dark mode disabled – light-only enterprise theme */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .cyber-glow {
+    box-shadow: 0 0 20px hsl(var(--cyber-glow) / 0.15),
+                0 0 60px hsl(var(--cyber-glow) / 0.05);
+  }
+
+  .cyber-border {
+    border: 1px solid hsl(var(--cyber-glow) / 0.2);
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--card) / 0.7);
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--cyber-grid) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--cyber-grid) / 0.5) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
